@@ -70,7 +70,6 @@ sub dt_starter_kit_create() {
   bind_service_instance_to_application($uaa_instance_name, $my_application_name);
 
   # get uaa instance variables from the environment
-  # $vcap_services_json, $vcap_application_json = get_environment_variables($my_application_name);
   $vcap_services_json = get_environment_variables($my_application_name);
   $uaa_instance_vars = get_service_instance_env_vars("predix-uaa", $uaa_instance_name, $vcap_services_json->{'VCAP_SERVICES'}{'predix-uaa'}, $vcap_services_json);
 
@@ -83,7 +82,6 @@ sub dt_starter_kit_create() {
   bind_service_instance_to_application($analytics_catalog_instance_name, $my_application_name);
 
   # get timeseries and analytics catalog instance variables from the environment
-  # $vcap_services_json, $vcap_application_json = get_environment_variables($my_application_name);
   $vcap_services_json = get_environment_variables($my_application_name);
   $timeseries_instance_vars = get_service_instance_env_vars("predix-timeseries", $timeseries_instance_name, $vcap_services_json->{'VCAP_SERVICES'}{'predix-timeseries'}, $vcap_services_json);
   $analytics_catalog_instance_vars = get_service_instance_env_vars("predix-analytics-catalog", $analytics_catalog_instance_name, $vcap_services_json->{'VCAP_SERVICES'}{'predix-analytics-catalog'}, $vcap_services_json);
