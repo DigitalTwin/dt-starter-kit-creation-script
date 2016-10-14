@@ -24,13 +24,13 @@ From a Windows command prompt (same instance as above will suffice), make sure y
 ```
 D:\Projects2016\dt-starter-kit-creation-script>create-dt-starter-kit.pl
 create_uaa_instance
-        executing: cf create-service predix-uaa Tiered scripted-predix-uaa -c "{\"adminClientSecret\":\"********\"}"
-        output: Creating service instance scripted-predix-uaa in org DigitalTwin / space dev as address@mail.ad.ge.com...
+        executing: cf create-service predix-uaa Tiered my-predix-uaa -c "{\"adminClientSecret\":\"********\"}"
+        output: Creating service instance my-predix-uaa in org DigitalTwin / space dev as address@mail.ad.ge.com...
 OK
 
 bind_service_instance_to_application
-        executing: cf bind-service myapp scripted-predix-uaa
-        output: Binding service scripted-predix-uaa to app myapp in org DigitalTwin / space dev as address@mail.ad.ge.com...
+        executing: cf bind-service myapp my-predix-uaa
+        output: Binding service my-predix-uaa to app myapp in org DigitalTwin / space dev as address@mail.ad.ge.com...
 OK
 TIP: Use 'cf restage myapp' to ensure your env variable changes take effect
 
@@ -38,32 +38,32 @@ get_environment_variables
         executing: cf env myapp
         retrieved environment variables
 get_service_instance_env_vars
-        looking for 'scripted-predix-uaa' in 'predix-uaa'
+        looking for 'my-predix-uaa' in 'predix-uaa'
         number of instances: 4
                 inspecting digitaltwin-predix-uaa
                 inspecting digitaltwin-predix-uaa-test
                 inspecting dt-predix-uaa
-                inspecting scripted-predix-uaa
-                        Found instance of scripted-predix-uaa
+                inspecting my-predix-uaa
+                        Found instance of my-predix-uaa
 create_service_instance
-        executing: cf create-service predix-timeseries Tiered scripted-timeseries -c "{\"trustedIssuerIds\":[\"https://some-guid.predix-uaa.run.aws-usw02-pr.ice.predix.io/oauth/token\"]}"
-        output: Creating service instance scripted-timeseries in org DigitalTwin / space dev as address@mail.ad.ge.com...
+        executing: cf create-service predix-timeseries Tiered my-timeseries -c "{\"trustedIssuerIds\":[\"https://some-guid.predix-uaa.run.aws-usw02-pr.ice.predix.io/oauth/token\"]}"
+        output: Creating service instance my-timeseries in org DigitalTwin / space dev as address@mail.ad.ge.com...
 OK
 
 bind_service_instance_to_application
-        executing: cf bind-service myapp scripted-timeseries
-        output: Binding service scripted-timeseries to app myapp in org DigitalTwin / space dev as address@mail.ad.ge.com...
+        executing: cf bind-service myapp my-timeseries
+        output: Binding service my-timeseries to app myapp in org DigitalTwin / space dev as address@mail.ad.ge.com...
 OK
 TIP: Use 'cf restage myapp' to ensure your env variable changes take effect
 
 create_service_instance
-        executing: cf create-service predix-analytics-catalog Bronze scripted-analytics-catalog -c "{\"trustedIssuerIds\":[\"https://some-guid.predix-uaa.run.aws-usw02-pr.ice.predix.io/oauth/token\"]}"
-        output: Creating service instance scripted-analytics-catalog in org DigitalTwin / space dev as address@mail.ad.ge.com...
+        executing: cf create-service predix-analytics-catalog Bronze my-analytics-catalog -c "{\"trustedIssuerIds\":[\"https://some-guid.predix-uaa.run.aws-usw02-pr.ice.predix.io/oauth/token\"]}"
+        output: Creating service instance my-analytics-catalog in org DigitalTwin / space dev as address@mail.ad.ge.com...
 OK
 
 bind_service_instance_to_application
-        executing: cf bind-service myapp scripted-analytics-catalog
-        output: Binding service scripted-analytics-catalog to app myapp in org DigitalTwin / space dev as address@mail.ad.ge.com...
+        executing: cf bind-service myapp my-analytics-catalog
+        output: Binding service my-analytics-catalog to app myapp in org DigitalTwin / space dev as address@mail.ad.ge.com...
 OK
 TIP: Use 'cf restage myapp' to ensure your env variable changes take effect
 
@@ -71,39 +71,39 @@ get_environment_variables
         executing: cf env myapp
         retrieved environment variables
 get_service_instance_env_vars
-        looking for 'scripted-timeseries' in 'predix-timeseries'
+        looking for 'my-timeseries' in 'predix-timeseries'
         number of instances: 3
                 inspecting rdt-turbine-data
                 inspecting rdt-ts
-                inspecting scripted-timeseries
-                        Found instance of scripted-timeseries
+                inspecting my-timeseries
+                        Found instance of my-timeseries
 get_service_instance_env_vars
-        looking for 'scripted-analytics-catalog' in 'predix-analytics-catalog'
+        looking for 'my-analytics-catalog' in 'predix-analytics-catalog'
         number of instances: 4
                 inspecting digitaltwin-analytics-catalog
                 inspecting rdt-analytics-catalog
                 inspecting hc-dt-analytic-catalog
-                inspecting scripted-analytics-catalog
-                        Found instance of scripted-analytics-catalog
+                inspecting my-analytics-catalog
+                        Found instance of my-analytics-catalog
 create_service_instance
-        executing: cf create-service postgres shared-nr scripted-postgres
-        output: Creating service instance scripted-postgres in org DigitalTwin / space dev as address@mail.ad.ge.com...
+        executing: cf create-service postgres shared-nr my-postgres
+        output: Creating service instance my-postgres in org DigitalTwin / space dev as address@mail.ad.ge.com...
 OK
 
 bind_service_instance_to_application
-        executing: cf bind-service myapp scripted-postgres
-        output: Binding service scripted-postgres to app myapp in org DigitalTwin / space dev as address@mail.ad.ge.com...
+        executing: cf bind-service myapp my-postgres
+        output: Binding service my-postgres to app myapp in org DigitalTwin / space dev as address@mail.ad.ge.com...
 OK
 TIP: Use 'cf restage myapp' to ensure your env variable changes take effect
 
 create_service_instance
-        executing: cf create-service rabbitmq-36 standard scripted-rabbitmq-36
-        output: Creating service instance scripted-rabbitmq-36 in org DigitalTwin / space dev as address@mail.ad.ge.com...
+        executing: cf create-service rabbitmq-36 standard my-rabbitmq-36
+        output: Creating service instance my-rabbitmq-36 in org DigitalTwin / space dev as address@mail.ad.ge.com...
 OK
 
 bind_service_instance_to_application
-        executing: cf bind-service myapp scripted-rabbitmq-36
-        output: Binding service scripted-rabbitmq-36 to app myapp in org DigitalTwin / space dev as address@mail.ad.ge.com...
+        executing: cf bind-service myapp my-rabbitmq-36
+        output: Binding service my-rabbitmq-36 to app myapp in org DigitalTwin / space dev as address@mail.ad.ge.com...
 OK
 TIP: Use 'cf restage myapp' to ensure your env variable changes take effect
 
