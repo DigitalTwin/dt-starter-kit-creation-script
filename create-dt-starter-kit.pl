@@ -21,23 +21,23 @@ dt_starter_kit_create($ARGV[0]);
 sub dt_starter_kit_create() {
   my($my_application_name) = "myapp";
 
-  my($uaa_instance_name) = "scripted-predix-uaa";
+  my($uaa_instance_name) = "my-predix-uaa";
   my($uaa_admin_secret) = "pa55w0rd";
   my($uaa_plan) = "Tiered";
 
-  my($postgres_instance_name) = "scripted-postgres";
+  my($postgres_instance_name) = "my-postgres";
   my($postgres_plan) = "shared-nr";
 
-  my($timeseries_instance_name) = "scripted-timeseries";
+  my($timeseries_instance_name) = "my-timeseries";
   my($timeseries_plan) = "Tiered";
 
-  my($analytics_catalog_instance_name) = "scripted-analytics-catalog";
+  my($analytics_catalog_instance_name) = "my-analytics-catalog";
   my($analytics_catalog_plan) = "Bronze";
 
-  my($rabbitmq_36_instance_name) = "scripted-rabbitmq-36";
+  my($rabbitmq_36_instance_name) = "my-rabbitmq-36";
   my($rabbitmq_36_plan) = "standard";
 
-  my($redis_instance_name) = "scripted-redis";
+  my($redis_instance_name) = "my-redis";
   my($redis_plan) = "shared-vm";
 
   my($client_name_tutorial_svcs) = "tutorial-svcs";
