@@ -12,7 +12,7 @@ uaac client update tutorial-user --redirect_uri "<redirect_url_1>","<redirect_ur
 ## Use the CloudFoundry client to:
 - Set your target via "cf target <api-endpoint>"
 - Login and set your org and space via "cf login"
-- Make sure you have an application in CloudFoundry to bind your services to.  If you don't, then you can create a dummy application by entering an empty directory and pushing a named application from that empty directory like this: ```cf push myapp```
+- Make sure you have an application in CloudFoundry to bind your services to.  If you don't, then create a dummy application first and note its name for the next step as you'll soon need it when configuring the script's local variables.
 
 ## Edit create-dt-starter-kit.pl
 - On the first line, modify the path to Perl as appropriate for your environment
