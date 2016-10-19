@@ -119,6 +119,9 @@ sub dt_starter_kit_create() {
   uaac_member_add($group_name_tutorialuser, $user_name_tutorialuser);
   uaac_member_add($group_name_tutorialadmin, $user_name_tutorialadmin);
   uaac_member_add($group_name_tutorialuser, $user_name_tutorialadmin);
+
+  # print report of postgres instance name and client names
+  generate_report($postgres_instance_name, $client_name_tutorial_svcs, $client_name_tutorial_user);
 }
 
 # utility method to unbind and delete services
@@ -362,6 +365,17 @@ sub uaac_member_add() {
   print "\toutput: $output\n";
 }
 
+sub generate_report() {
+  my($postgres_instance_name) = shift();
+  my($client_name_tutorial_svcs) = shift();
+  my($client_name_tutorial_user) = shift();
+
+  print "Report\n";
+  print "\tpostgres service instance name: \"$postgres_instance_name\"\n";
+  print "\tyour UAA clients:\n";
+  print "\t\ttutorial services: \"$client_name_tutorial_svcs\"\n";
+  print "\t\ttutorial user: \"$client_name_tutorial_user\"\n";
+}
 
 ################################## experiments ######################################
 sub get_app_guid() {
