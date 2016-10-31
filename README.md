@@ -195,6 +195,12 @@ uaac_member_add
 uaac_member_add
         executing: uaac member add tutorial.user tutorialadmin
         output: success
+        
+Report
+        postgres service instance name: "my-postgres"
+        your UAA clients:
+                tutorial services: "tutorial-svcs"
+                tutorial user: "tutorial-user"
 ```
 
 ## Cleaning up...
