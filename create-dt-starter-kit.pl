@@ -34,7 +34,7 @@ sub dt_starter_kit_create() {
   my($analytics_catalog_instance_name) = "my-analytics-catalog";
   my($analytics_catalog_plan) = "Bronze";
 
-  my($rabbitmq_36_instance_name) = "my-rabbitmq-36";
+  my($rabbitmq_36_instance_name) = "tutorial-rabbitmq";
   my($rabbitmq_36_plan) = "standard";
 
   my($redis_instance_name) = "my-redis";
